@@ -30,3 +30,16 @@ const searchInput = document.querySelector('input[name="search"]');
                     });
 
                     
+// Event listener untuk tombol clear search
+                    clearSearchBtn.addEventListener('click', function(event) {
+                        event.preventDefault();
+
+                        // Kosongkan input pencarian
+                        searchInput.value = '';
+
+                        // Set tombol clear search kembali disembunyikan
+                        clearSearchBtn.classList.add('hidden');
+
+                        // Submit form setelah membersihkan input pencarian
+                        this.closest('form').submit();
+                    });
